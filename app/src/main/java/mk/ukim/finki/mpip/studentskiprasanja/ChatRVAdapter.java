@@ -12,11 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class ChatRVAdapter extends RecyclerView.Adapter {
-    // variable for our array list and context.
+    // променливи за нашата листа и контекст
     private ArrayList<ChatsModel> messageModalArrayList;
     private Context context;
 
-    // constructor class.
+    // конструктор за класата
     public ChatRVAdapter(ArrayList<ChatsModel> messageModalArrayList, Context context) {
         this.messageModalArrayList = messageModalArrayList;
         this.context = context;
@@ -26,16 +26,14 @@ public class ChatRVAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
-        // below code is to switch our
-        // layout type along with view holder.
-        //za koe view da vrne
+        // кодот во проодлжение е за кој layout type да го врате со view holder-от
         switch (viewType) {
             case 0:
-                // below line we are inflating user message layout.
+                // порака од корисникот
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_msg_item, parent, false);
                 return new UserViewHolder(view);
             case 1:
-                // below line we are inflating bot message layout.
+                // порака од ботот
                 view = LayoutInflater.from(parent.getContext()).inflate(R.layout.bot_msg_item, parent, false);
                 return new BotViewHolder(view);
         }
@@ -44,15 +42,15 @@ public class ChatRVAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        // this method is use to set data to our layout file.
+        // овој метод се користи за поставување на податоци во layout фајлот
         ChatsModel modal = messageModalArrayList.get(position);
         switch (modal.getSender()) {
             case "user":
-                // below line is to set the text to our text view of user layout
+                // поставување на текстот во text vies на корисничкиот layout
                 ((UserViewHolder) holder).userTV.setText(modal.getMessage());
                 break;
             case "bot":
-                // below line is to set the text to our text view of bot layout
+                // поставување на текстот во text view на layout на ботот
                 ((BotViewHolder) holder).botTV.setText(modal.getMessage());
                 break;
         }
@@ -60,13 +58,13 @@ public class ChatRVAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        // return the size of array list
+        // враќа големина на листа
         return messageModalArrayList.size();
     }
 
     @Override
     public int getItemViewType(int position) {
-        // below line of code is to set position.
+        // поставување на позиција
         switch (messageModalArrayList.get(position).getSender()) {
             case "user":
                 return 0;
@@ -79,26 +77,24 @@ public class ChatRVAdapter extends RecyclerView.Adapter {
 
     public static class UserViewHolder extends RecyclerView.ViewHolder {
 
-        // creating a variable
-        // for our text view.
+        // креирање на променлива за text view
         TextView userTV;
 
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
-            // initializing with id.
+            // иницијализација со id
             userTV = itemView.findViewById(R.id.idTVUser);
         }
     }
 
     public static class BotViewHolder extends RecyclerView.ViewHolder {
 
-        // creating a variable
-        // for our text view.
+        // креирање на променлива за text view
         TextView botTV;
 
         public BotViewHolder(@NonNull View itemView) {
             super(itemView);
-            // initializing with id.
+            // иницијализација со id
             botTV = itemView.findViewById(R.id.idTVBot);
         }
     }

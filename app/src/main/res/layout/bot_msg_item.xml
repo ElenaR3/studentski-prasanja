@@ -31,6 +31,8 @@
             android:layout_gravity="center_vertical"
             android:layout_margin="5dp"
             android:padding="3dp"
+            android:autoLink="web"
+            android:textColorLink="#AAFAFF"
             android:text="Bot message"
             android:textColor="@color/white" />
 

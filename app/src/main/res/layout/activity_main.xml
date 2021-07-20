@@ -30,7 +30,7 @@
         android:background="@color/purple_200"
         android:fontWeight="1000"
         android:gravity="center"
-        android:text="Здраво! Jас сум твојот нов најдобар пријател, твојата лична студентска служба. Те молам пишувај ми со кирилично писмо."
+        android:text="Здраво! Jас сум твојот нов најдобар пријател, твојата лична студентска служба. Те молам пишувај ми на македонски јазик."
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

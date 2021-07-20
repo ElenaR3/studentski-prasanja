@@ -25,6 +25,7 @@
             android:layout_margin="5dp"
             android:padding="3dp"
             android:text="User message"
+            android:autoLink="web"
             android:textColor="@color/white" />
 
         <!--we are displaying user icon-->

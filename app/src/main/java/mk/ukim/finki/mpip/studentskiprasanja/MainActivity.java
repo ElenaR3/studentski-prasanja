@@ -42,12 +42,7 @@ public class MainActivity extends AppCompatActivity {
         initListeners();
 
     }
-//    private void getData() {
-//        Intent i = getIntent();
-////        String text = i.getStringExtra("text");
-//        TextView pole1 = findViewById(R.id.pole1);
-//        pole1.setText(text);
-//    }
+
     private void initListeners() {
         Button button_explicit = findViewById(R.id.prenos);
         button_explicit.setOnClickListener(new View.OnClickListener() {
